@@ -6,8 +6,13 @@ export default {
   hash: true,
   routes: routes,
   fastRefresh: {},
-  antd: {},
+  antd: {
+    // dark: true, // 开启暗色主题
+  },
   mock: false,
+  theme: {
+    "primary-color": "#1DA57A",
+  },
   history: {
     type: 'hash',
   },

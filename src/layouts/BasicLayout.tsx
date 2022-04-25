@@ -4,7 +4,7 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import './BasicLayout.less';
 import SiderMenu from './SiderMenu';
 
-const { Header, Sider, Content } = Layout;
+const { Header, Content } = Layout;
 
 interface IBasicLayoutProps {
   children: string | React.ReactNode;

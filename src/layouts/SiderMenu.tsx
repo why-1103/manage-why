@@ -26,15 +26,14 @@ export default function SiderMenu(props: ISiderMenuProps) {
         return null;
       }
       if (!menu?.routes) {
-        return getItem(menu?.title, menu?.path, menu?.icon);
+        return getItem(menu?.name, menu?.path, menu?.icon);
       }
       const { routes } = menu;
       const children = routes?.map((rt: any) => {
-        return rt?.hidden ? null : getItem(rt?.title, rt?.path, rt?.icon);
+        return rt?.hidden ? null : getItem(rt?.name, rt?.path, rt?.icon);
       });
-      return getItem(menu?.title, menu?.path, menu?.icon, children);
+      return getItem(menu?.name, menu?.path, menu?.icon, children);
     });
-    console.log(items);
     setMenuItems(items);
   };
 
@@ -59,7 +58,7 @@ export default function SiderMenu(props: ISiderMenuProps) {
 
   return (
     <Sider trigger={null} collapsible collapsed={collapsed}>
-      <div className="logo">logo</div>
+      <div className="logo"></div>
       <Menu
         theme="dark"
         mode="inline"
