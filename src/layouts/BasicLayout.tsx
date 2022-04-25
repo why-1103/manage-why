@@ -8,18 +8,25 @@ const { Header, Sider, Content } = Layout;
 
 interface IBasicLayoutProps {
   children: string | React.ReactNode;
+  history: any;
+  location: any;
+  match: any;
+  route: any;
+  routes: any[];
+  staticContext: any;
 }
 
 function BasicLayout(props: IBasicLayoutProps) {
-  const { children } = props;
+  const { children, routes } = props;
   // 收缩侧边栏
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const toggle = () => {
     setCollapsed(!collapsed);
   };
+
   return (
     <Layout>
-      <SiderMenu collapsed={collapsed} />
+      <SiderMenu collapsed={collapsed} menuData={routes} />
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
           {React.createElement(

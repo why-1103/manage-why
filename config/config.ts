@@ -5,7 +5,9 @@ export default {
   publicPath: '/static/',
   hash: true,
   routes: routes,
+  fastRefresh: {},
   antd: {},
+  mock: false,
   history: {
     type: 'hash',
   },
