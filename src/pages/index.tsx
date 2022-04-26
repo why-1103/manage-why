@@ -6,10 +6,7 @@ import { IconTool } from '@/utils/utils';
 export default function IndexPage() {
   return (
     <div>
-      {React.createElement(Icon['ToolOutlined'], {
-        style: { fontSize: '16px' },
-      })}
-      {IconTool('ToolOutlined')}
+      {/* {IconTool('ToolOutlined', {})} */}
       <span className="anticon anticon-step-forward"></span>
       <h1 className={styles.title}>Page index</h1>
     </div>

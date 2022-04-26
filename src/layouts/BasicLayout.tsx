@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Layout } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import DynamicAntdTheme from 'dynamic-antd-theme';
 import './BasicLayout.less';
 import SiderMenu from './SiderMenu';
+import ThemeToggle from './components/ThemeToggle';
 
 const { Header, Content } = Layout;
 
@@ -36,6 +38,8 @@ function BasicLayout(props: IBasicLayoutProps) {
               onClick: toggle,
             },
           )}
+          {/* <DynamicAntdTheme /> */}
+          <ThemeToggle />
         </Header>
         <Content
           className="site-layout-background"
