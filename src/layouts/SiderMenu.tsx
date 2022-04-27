@@ -6,7 +6,6 @@ import { IconTool } from '@/utils/utils';
 const { Sider } = Layout;
 
 interface ISiderMenuProps {
-  collapsed: boolean;
   menuData: any[];
 }
 
@@ -14,8 +13,14 @@ type MenuItem = Required<MenuProps>['items'][number];
 
 export default function SiderMenu(props: ISiderMenuProps) {
   // 收缩侧边栏
-  const { collapsed, menuData } = props;
+  const { menuData } = props;
   const [menuItems, setMenuItems] = useState<any>([]);
+
+  // 收缩侧边栏
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const toggle = () => {
+    setCollapsed(!collapsed);
+  };
 
   const buildMenuItemsData = (menuData: any[]) => {
     const sideMenuData =
@@ -59,6 +64,22 @@ export default function SiderMenu(props: ISiderMenuProps) {
   return (
     <Sider trigger={null} collapsible collapsed={collapsed}>
       <div className="logo"></div>
+      <Menu
+        theme="dark"
+        mode="inline"
+        defaultSelectedKeys={['1']}
+        onClick={toggle}
+        items={[
+          {
+            key: 'collapsed',
+            icon: IconTool(
+              collapsed ? 'MenuUnfoldOutlined' : 'MenuFoldOutlined',
+              {},
+            ),
+            label: collapsed ? '收缩菜单' : '展开菜单',
+          },
+        ]}
+      />
       <Menu
         theme="dark"
         mode="inline"

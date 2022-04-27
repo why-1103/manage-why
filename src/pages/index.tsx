@@ -1,14 +1,36 @@
-import React from 'react';
-import * as Icon from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Input, Button } from 'antd';
 import styles from './index.less';
-import { IconTool } from '@/utils/utils';
+import Map4Baidu from '@/components/Map4Baidu/index';
 
 export default function IndexPage() {
+  const [address, setAddress] = useState<string>('');
+  const [searchText, setSearchText] = useState<string>('');
+
+  const AddCallback = (addr: string) => {
+    if (addr) {
+      setAddress(addr);
+      setSearchText(addr);
+    }
+  };
+
+  const handleSearch = (value: string) => {
+    if (value) {
+      setAddress(value);
+    }
+  };
   return (
     <div>
       {/* {IconTool('ToolOutlined', {})} */}
-      <span className="anticon anticon-step-forward"></span>
-      <h1 className={styles.title}>Page index</h1>
+      {/* <Button type="primary">查看</Button> */}
+      <Input.Search
+        value={searchText}
+        onChange={(e) => {
+          setSearchText(e?.target?.value);
+        }}
+        onSearch={handleSearch}
+      />
+      <Map4Baidu AddressDetail={address} AddCallback={AddCallback} />
     </div>
   );
 }

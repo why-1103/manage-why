@@ -20,24 +20,12 @@ interface IBasicLayoutProps {
 
 function BasicLayout(props: IBasicLayoutProps) {
   const { children, routes } = props;
-  // 收缩侧边栏
-  const [collapsed, setCollapsed] = useState<boolean>(false);
-  const toggle = () => {
-    setCollapsed(!collapsed);
-  };
 
   return (
     <Layout>
-      <SiderMenu collapsed={collapsed} menuData={routes} />
+      <SiderMenu menuData={routes} />
       <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }}>
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: 'trigger',
-              onClick: toggle,
-            },
-          )}
+        <Header className="header" style={{ padding: 0 }}>
           {/* <DynamicAntdTheme /> */}
           <ThemeToggle />
         </Header>

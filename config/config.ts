@@ -1,4 +1,4 @@
-import routes from './routes'
+import routes from './routes';
 
 export default {
   base: '/docs/',
@@ -6,14 +6,17 @@ export default {
   hash: true,
   routes: routes,
   fastRefresh: {},
+  // mfsu: {},
+  // webpack5: {},
+  // dynamicImport: {},
   antd: {
     // dark: true, // 开启暗色主题
   },
   mock: false,
   theme: {
-    "primary-color": "#1DA57A",
+    'primary-color': '#1DA57A',
   },
   history: {
     type: 'hash',
   },
-}
+};
