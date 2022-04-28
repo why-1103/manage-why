@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Input, Button } from 'antd';
 import styles from './index.less';
 import Map4Baidu from '@/components/Map4Baidu/index';
+import Editor from '@/components/UEditor/index';
 
 export default function IndexPage() {
   const [address, setAddress] = useState<string>('');
@@ -23,6 +24,7 @@ export default function IndexPage() {
     <div>
       {/* {IconTool('ToolOutlined', {})} */}
       {/* <Button type="primary">查看</Button> */}
+      <Editor />
       <Input.Search
         value={searchText}
         onChange={(e) => {
