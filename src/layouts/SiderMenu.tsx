@@ -65,6 +65,7 @@ export default function SiderMenu(props: ISiderMenuProps) {
     <Sider trigger={null} collapsible collapsed={collapsed}>
       <div className="logo"></div>
       <Menu
+        selectable={false}
         theme="dark"
         mode="inline"
         defaultSelectedKeys={['1']}

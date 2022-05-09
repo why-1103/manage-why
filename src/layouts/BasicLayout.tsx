@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Layout } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import DynamicAntdTheme from 'dynamic-antd-theme';
 import './BasicLayout.less';
 import SiderMenu from './SiderMenu';
-import ThemeToggle from './components/ThemeToggle';
+import GlobalHeader from './GlobalHeader';
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 interface IBasicLayoutProps {
   children: string | React.ReactNode;
@@ -25,10 +24,7 @@ function BasicLayout(props: IBasicLayoutProps) {
     <Layout>
       <SiderMenu menuData={routes} />
       <Layout className="site-layout">
-        <Header className="header" style={{ padding: 0 }}>
-          {/* <DynamicAntdTheme /> */}
-          <ThemeToggle />
-        </Header>
+        <GlobalHeader />
         <Content
           className="site-layout-background"
           style={{

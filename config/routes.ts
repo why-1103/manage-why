@@ -1,5 +1,22 @@
 export default [
   {
+    path: '/user',
+    key: 'User',
+    component: '../layouts/UserLayout',
+    routes: [
+      {
+        path: '/user',
+        hidden: true,
+        redirect: '/user/login',
+      },
+      {
+        path: '/user/login',
+        key: 'Login',
+        component: './User/Login',
+      },
+    ],
+  },
+  {
     path: '/',
     key: 'BasicLayout',
     component: '../layouts/BasicLayout',
@@ -7,16 +24,16 @@ export default [
       {
         path: '/',
         hidden: true,
-        redirect: '/test'
+        redirect: '/test',
       },
       {
         path: '/test',
         name: '测试页面',
         icon: 'PlayCircleOutlined',
-        component: './index'
+        component: './index',
       },
       {
-        path: '/charts', 
+        path: '/charts',
         icon: 'FundOutlined',
         name: '可视化插件',
         routes: [
@@ -25,28 +42,28 @@ export default [
             name: '可视化插件',
             hidden: true,
             icon: 'BarChartOutlined',
-            redirect: '/bar'
+            redirect: '/bar',
           },
           {
             path: '/charts/bar',
             name: '柱状图',
             icon: 'BarChartOutlined',
-            component: './charts/bar'
+            component: './charts/bar',
           },
           {
             path: '/charts/brokenline',
             name: '折线图',
             icon: 'LineChartOutlined',
-            component: './charts/brokenline'
+            component: './charts/brokenline',
           },
           {
-            path: '/charts/doughnut', 
+            path: '/charts/doughnut',
             name: '饼图',
             icon: 'PieChartOutlined',
-            component: './charts/doughnut'
+            component: './charts/doughnut',
           },
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   },
 ];

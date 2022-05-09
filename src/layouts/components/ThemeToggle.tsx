@@ -78,7 +78,7 @@ function ThemeToggle(props: IThemeToggleProps) {
     },
   ];
 
-  const menu = <Menu onClick={handleMenuClick} items={items} />;
+  const menu = <Menu theme="dark" onClick={handleMenuClick} items={items} />;
 
   return (
     <Dropdown overlay={menu}>
@@ -89,11 +89,11 @@ function ThemeToggle(props: IThemeToggleProps) {
           paddingRight: 12,
           display: 'inline-block',
           height: '100%',
+          color: '#fff',
         }}
       >
         <span className="ant-dropdown-link">
           {IconTool('SkinOutlined', {})}
-          切换主题
         </span>
       </span>
     </Dropdown>

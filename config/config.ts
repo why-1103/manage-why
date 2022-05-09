@@ -12,7 +12,7 @@ export default {
   antd: {
     // dark: true, // 开启暗色主题
   },
-  mock: false,
+  mock: {}, // 开启mock
   theme: {
     'primary-color': '#1DA57A',
   },
